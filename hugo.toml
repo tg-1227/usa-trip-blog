@@ -6,6 +6,8 @@ theme = "PaperMod"
 [pagination]
   pagerSize = 10
 
-[params.homeInfoParams]
-    Title = "Hi there 👋"
-    Content = "アメリカ横断ブログへようこそ！ここからルート検討や準備を記録していきます。"
+[params]
+    googleAnalyticsID = "G-KFYME843QE"
+    [params.homeInfoParams]
+        Title = "Hi there 👋"
+        Content = "アメリカ横断ブログへようこそ！ここからルート検討や準備を記録していきます。"
