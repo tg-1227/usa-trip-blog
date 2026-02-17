@@ -3,11 +3,80 @@ languageCode = "ja"
 title = "アメリカ横断ブログ"
 theme = "PaperMod"
 
+# カテゴリーベースのURL構造
+[permalinks]
+  [permalinks.page]
+    motivation = "/motivation/:slug/"
+    preparation = "/preparation/:slug/"
+    on-the-road = "/on-the-road/:slug/"
+    reflection = "/reflection/:slug/"
+
+# ページネーション
 [pagination]
   pagerSize = 10
 
+# メニュー設定（上部ナビゲーション）
+[menu]
+  [[menu.main]]
+    name = "背景・動機"
+    url = "/motivation/"
+    weight = 1
+  [[menu.main]]
+    name = "準備編"
+    url = "/preparation/"
+    weight = 2
+  [[menu.main]]
+    name = "横断中"
+    url = "/on-the-road/"
+    weight = 3
+  [[menu.main]]
+    name = "振り返り"
+    url = "/reflection/"
+    weight = 4
+  [[menu.main]]
+    name = "検索"
+    url = "/search/"
+    weight = 5
+
+# PaperMod テーマ設定
 [params]
-    googleAnalyticsID = "G-KFYME843QE"
-    [params.homeInfoParams]
-        Title = "Hi there 👋"
-        Content = "アメリカ横断ブログへようこそ！ここからルート検討や準備を記録していきます。"
+  env = "production"
+  description = "大学院生3人がアメリカ横断の準備から実行までを記録するブログ"
+  author = "TOGO"
+  
+  # Google Analytics
+  googleAnalyticsID = "G-KFYME843QE"
+  
+  # ホームページ設定
+  [params.homeInfoParams]
+    Title = "アメリカ横断ブログ 🚗🇺🇸"
+    Content = "大学院卒業記念に友人3人でアメリカ横断旅行を計画中。ルート検討、予算、準備の全てを記録していきます。"
+  
+  # 記事内の機能
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  disableAnchoredHeadings = true
+  
+  # 検索機能
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+# 検索ページを有効化
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# カテゴリーのタクソノミー設定
+[taxonomies]
+  category = "categories"
+  tag = "tags"
